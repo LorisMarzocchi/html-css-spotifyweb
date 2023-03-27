@@ -117,12 +117,26 @@ ul, a{
 }
 .side-playlist li{
     margin-bottom: 5px;
+    position: relative;
 }
 .side-playlist li:hover{
     color: white;
     cursor: pointer;
 }
-
+.side-playlist li::before {
+	content: '';
+    display: block;
+    position: absolute;
+    top: 2px;
+    left: -11px;
+    height: 100%;
+    width: 3px;
+    background-color: greenyellow;
+    opacity: 0;
+}
+.side-playlist li:hover::before {
+   opacity: 1;
+}
 .img-home{
     width: 25px;
     height: 25px;
@@ -147,6 +161,20 @@ ul, a{
 }
 .home-btn{
     color: white;
+}
+.side-home li::before{
+	content: '';
+    display: block;
+    position: absolute;
+    right: 0;
+    left: 0;
+    height: 20px;
+    width: 3px;
+    background-color: greenyellow;
+    opacity: 0;
+}
+.side-home li:hover::before {
+   opacity: 1;
 }
 .side-home li{
     display: flex;
@@ -197,6 +225,20 @@ hr {
 .main-menu li > a:hover{
     color: white;
 }
+.main-menu li a::after{
+	content: '';
+    display: block;
+    height: 2px;
+    width: 40%;
+    background-color: greenyellow;
+    opacity: 0;
+    text-align: center;
+    margin: auto;
+    margin-top: 3px;
+}
+.main-menu a:hover::after {
+   opacity: 1;
+}
 .main-playlist h2{
     color: white;
     font-size: 1.5rem;
@@ -244,16 +286,6 @@ hr {
     width: calc(100% / 6 - 1rem);
     border-radius: 50%;
 }
-/* .main-menu li::after a:hover {
-	content: "";
-	display: block;
-	position: absolute;
-	right: 35%;
-	bottom: 0;
-	left: 35%;
-	height: 5px;
-	background-color: greenyellow;
-} */
 
 .main-playlist .fa-circle-play {
     color: white;
@@ -363,12 +395,12 @@ hr {
 
 }
 
-.player-bar .song-controller i:hover {
+.song-controller i:hover {
     scale: 1.2;
     cursor: pointer;
 }
 
-.player-bar .song-controller :nth-child(3) {
+.song-controller :nth-child(3) {
     font-size: 2rem;
 }
 
@@ -430,7 +462,7 @@ hr {
     cursor: pointer;
 }
 
-.bar-right .sound {
+.sound {
     background-color: var(--bkg-grey-text);
     min-width: 30%;
     width: 40%;
@@ -438,7 +470,7 @@ hr {
     border-radius: 10px;
 }
 
-.bar-right .sound .sound-hight {
+.sound-hight {
     width: 30%;
     height: 100%;
     background-color: white;
@@ -446,7 +478,7 @@ hr {
     position: relative;
 }
 
-.bar-right .sound-hight .fa-circle {
+.sound-hight .fa-circle {
     display: none;
     color: white;
     font-size: 1.1em;
@@ -455,11 +487,11 @@ hr {
     top: -4px;
 }
 
-.bar-right .sound:hover .sound-hight {
+.sound:hover .sound-hight {
     background-color: greenyellow;
 }
 
-.bar-right .sound:hover .fa-circle {
+.sound:hover .fa-circle {
     cursor: pointer;
     display: unset;
 }
@@ -489,12 +521,15 @@ hr {
     .side-playlist{
         display: none;
     }
+    .container-playlist >p{
+        display: none;
+    }
     .container-menu{
         align-items: flex-start;
         margin-left: 0px;
         margin-top: 0;
     }
-
+    
     .logo-s{
         display: block;
     }
