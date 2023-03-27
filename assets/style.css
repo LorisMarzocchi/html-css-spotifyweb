@@ -85,7 +85,7 @@
 .btn-upgrade{
     position: absolute;
     top: 20px;
-    right: 25px;
+    right: 35px;
     color: white;
     text-decoration: none;
     padding: 10px;
@@ -218,6 +218,9 @@ hr {
     text-align: center;
     margin-bottom: 7px;
 }
+.music > p{
+    color: var(--bkg-grey-text);
+}
 .music img{
     width: 100%;
     object-fit: contain;
@@ -253,7 +256,11 @@ hr {
 #icon-play:hover {
     opacity: 1;
     
-  }
+}
+.div-img img:hover {
+    opacity: 0.5;
+
+}
 .div-img {
     position: relative;
 }
@@ -310,7 +317,7 @@ hr {
 .icon-left {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
+    /* flex-direction: column; */
     color: var(--bkg-grey-text);
     gap: 0.5rem;
 }
@@ -503,6 +510,9 @@ hr {
     }
     .song-img img{
         margin-left: 0;
+    }
+    .icon-left{
+        flex-direction: column;
     }
     hr{
         display: none;
